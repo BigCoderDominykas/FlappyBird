@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class Bird : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Bird : MonoBehaviour
     public GameObject skin1;
     public GameObject skin2;
     public GameObject skin3;
+    public GameObject background1;
+    public GameObject background2;
 
 
     int score = 0;
@@ -24,6 +27,15 @@ public class Bird : MonoBehaviour
 
     private void Start()
     {
+        if (Random.Range(0, 2) == 0)
+        {
+            background1.SetActive(true);
+        }
+        else
+        {
+            background2.SetActive(true);
+        }
+
         switch (Random.Range(0, 3))
         {
             case 0:
