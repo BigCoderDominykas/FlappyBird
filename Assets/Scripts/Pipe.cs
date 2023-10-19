@@ -8,7 +8,7 @@ public class Pipe : MonoBehaviour
 
     float startX;
     float endX;
-    
+
     void Start()
     {
         startX = Camera.main.ViewportToWorldPoint(new Vector3(0, 0)).x - 1;
@@ -25,5 +25,10 @@ public class Pipe : MonoBehaviour
             var height = Random.Range(-1f, 4f);
             transform.position = new Vector3(endX, height);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GetComponent<AudioSource>().Play();
     }
 }
